@@ -42,7 +42,7 @@ BOT_TOKEN = "your-telegram-bot-token"
 ADMIN_ID = 123456789  # Replace with your Telegram user ID
 CHANNEL_USERNAME = "@yourchannelusername"
 
-
+---
 
 📦 3. Install Requirements
 bash
@@ -50,7 +50,7 @@ Copy
 Edit
 pip install -r requirements.txt
 
-
+---
 
 ▶️ 4. Run the Bot
 bash
@@ -58,13 +58,13 @@ Copy
 Edit
 python main.py
 
-
+---
 
 ☁️ 5. Optional: Deploy to Replit or PythonAnywhere
 Upload all files except user_data.json and config.py to a private project
 
 On Replit, use .env or secret variables for token values instead of config.py
-
+---
 🛠 Features
 /start – Show intro with inline buttons
 
@@ -81,7 +81,7 @@ On Replit, use .env or secret variables for token values instead of config.py
 Auto-notify new members
 
 Periodic check for new YouTube videos
-
+---
 📜 License
 MIT – Use it, share it, modify it. Just don’t claim it's yours 😉
 
