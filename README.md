@@ -1,20 +1,20 @@
-## 🤖 MBS Helper Bot
+# 🤖 MBS Helper Bot
 
-A Telegram bot that sends YouTube video updates, helps users with group rules, allows admin broadcasts, and more.
+A powerful Telegram bot for automating YouTube updates, welcoming group members, admin broadcasts, and more.
 
 ---
 
-### 📁 Project Structure
+## 📁 Project Structure
 
-MBSHelperBot/
-│
+mbs_helper_bot/
 ├── main.py # Main bot logic
-├── config.py # Token and config values (NOT included in repo for security)
-├── keep_alive.py # Keeps the bot alive on hosting platforms
 ├── youtube_notify.py # YouTube update checker
-├── user_data.json # Stores chat IDs for broadcasting
+├── keep_alive.py # Keeps bot alive (useful on Replit)
+├── user_data.json # Stores chat/user IDs for broadcast
 ├── requirements.txt # Python package dependencies
-└── README.md # You're here!
+├── README.md # You're here!
+├── .env # (Not tracked) Holds sensitive info
+└── .gitignore # Ignores .env, user_data.json, etc.
 
 yaml
 Copy
@@ -22,68 +22,75 @@ Edit
 
 ---
 
-### ⚙️ 1. Setup Instructions
+## ⚙️ 1. Setup Instructions
 
-#### ✅ Requirements
+### ✅ Requirements
 
-- Python 3.10+
-- Telegram bot token from [BotFather](https://t.me/BotFather)
-- Admin Telegram user ID
-- Optional: A YouTube channel ID to track latest videos
-
----
-
-### 🔐 2. `config.py` File (you must create this)
-
-Create a file named `config.py` in the root folder with the following content:
-
-```python
-BOT_TOKEN = "your-telegram-bot-token"
-ADMIN_ID = 123456789  # Replace with your Telegram user ID
-CHANNEL_USERNAME = "@yourchannelusername"
+- Python 3.10 or higher  
+- Telegram bot token via [@BotFather](https://t.me/BotFather)  
+- Your Telegram user ID (for admin)  
+- Optional: Your YouTube channel ID to fetch latest videos
 
 ---
 
-📦 3. Install Requirements
-bash
+## 🔐 2. `.env` File (Replace `config.py`)
+
+Create a file named `.env` in the root folder with this content:
+
+BOT_TOKEN=your-telegram-bot-token
+ADMIN_ID=your-admin-id
+CHANNEL_USERNAME=@yourchannelusername
+
+yaml
 Copy
 Edit
-pip install -r requirements.txt
+
+> ⚠️ Don't commit this file to GitHub. It's already in `.gitignore`.
 
 ---
 
+## 📦 3. Install Dependencies
+
+Run this in your terminal:
+
+```bash
+pip install -r requirements.txt
 ▶️ 4. Run the Bot
+Start the bot locally:
+
 bash
 Copy
 Edit
 python main.py
-
 ---
+☁️ 5. Deploy (Optional)
+You can host this bot on:
 
-☁️ 5. Optional: Deploy to Replit or PythonAnywhere
-Upload all files except user_data.json and config.py to a private project
+Replit
 
-On Replit, use .env or secret variables for token values instead of config.py
----
+Add BOT_TOKEN, ADMIN_ID, CHANNEL_USERNAME as Replit secrets (not in .env)
+
+PythonAnywhere
+
+VPS or any Python-supported hosting
+
 🛠 Features
-/start – Show intro with inline buttons
+Command	Description
+/start	Show intro with inline buttons
+/help	Show help message
+/rules	Group rules
+/adminpanel	Admin panel (only for authorized admin)
+/broadcast	Broadcast message to all saved users (admin only)
+/postchannel	Post message to a linked channel (admin only)
+/users	Show total registered users
+/delete	Delete last message (admin only)
+➕ Auto-Welcome	Welcomes new users in group automatically
+🔁 YouTube Update	Sends latest YouTube video notification to channel
 
-/help – Show help message
-
-/rules – Group rules
-
-/adminpanel – Admin panel with buttons for broadcast, post, count
-
-/broadcast – Admin-only broadcast to all saved users
-
-/postchannel – Admin-only post to a configured Telegram channel
-
-Auto-notify new members
-
-Periodic check for new YouTube videos
----
 📜 License
-MIT – Use it, share it, modify it. Just don’t claim it's yours 😉
+MIT — Free to use, modify, and share. Just don't remove credit 😉
+
+✅ That’s it! You’re ready to go live.
 
 yaml
 Copy
@@ -91,8 +98,10 @@ Edit
 
 ---
 
-6. **Save the file**. That’s it!
-
-Now when someone opens your project (or you zip it and send it), they can just open `README.md` and see full instructions.
-
-Let me know if you want me to make the ZIP file for you next.
+### ✅ What Next?
+- Paste this into `README.md` file
+- Git add & commit:
+  ```bash
+  git add README.md
+  git commit -m "📄 Added complete README with setup guide"
+  git push
